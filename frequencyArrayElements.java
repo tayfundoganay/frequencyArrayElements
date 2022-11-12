@@ -1,5 +1,6 @@
 package Arrays;
 import java.util.Arrays;
+import java.util.Random;
 
 
 public class frequencyArrayElements {
@@ -21,12 +22,16 @@ public class frequencyArrayElements {
             return count;
         }
         public static void main(String[]args){
-            int [] array={10,20,20,10,10,20,5,20};
+           Random random = new Random();
+            int [] array= new int[10];
+            for (int i=0;i<10;i++) {
+            array[i] = random.nextInt(0, 10);
+            }
             System.out.println("Array : "+ Arrays.toString(array));
             System.out.println("Frequency");
             for (int i = 0; i < array.length; i++) {
                 if (ignore(array, array[i], i)) {
-                    System.out.println("Number of " + array[i] + " has 3 repetition" + equalCount(array, array[i]) );
+                    System.out.println("Number of " + array[i] + " has " + equalCount(array, array[i]) + " repetition" );
                 }
             }
         }
